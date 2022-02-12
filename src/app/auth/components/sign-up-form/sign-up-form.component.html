@@ -1,0 +1,146 @@
+<div class="box">
+
+    <div *ngIf="isLoading" class="spinner">
+        <app-loading-spinner></app-loading-spinner>
+     </div>
+    <div *ngIf="!isLoading">
+
+    <form [formGroup]='form' (ngSubmit)="submit()">
+        <mat-card-header>
+            <mat-card-title>SIGN UP FORM</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="host">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>First Name</mat-label>
+                <input matInput required formControlName="firstname">
+                    <mat-error class="validation"
+                        *ngIf="form.get('firstname')!.invalid && form.get('firstname')!.touched"
+                        >
+                        <small 
+                        *ngIf="form.get('firstname')!.errors!['required']"
+                        >This field is required and cannot be empty</small>
+            
+                        <small 
+                        *ngIf="form.get('firstname')!.errors!['minlength']">
+                        This field must contain at least  {{form.get('firstname')!.errors!['minlength']!.requiredLength}} characters, now it contains {{form.get('firstname')!.errors!['minlength']!.actualLength}}...
+                        </small>
+        
+                        <small 
+                        *ngIf="form.get('firstname')!.errors!['maxlength']">
+                        This field must not exceed   {{form.get('firstname')!.errors!['maxlength']!.requiredLength}} characters, now it contains {{form.get('firstname')!.errors!['maxlength']!.actualLength}}...
+                        </small>
+                    </mat-error>
+            </mat-form-field>
+   
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Last Name</mat-label>
+                <input matInput required formControlName="lastname">
+                    <mat-error class="validation"
+                        *ngIf="form.get('lastname')!.invalid && form.get('lastname')!.touched"
+                        >
+                        <small 
+                        *ngIf="form.get('lastname')!.errors!['required']"
+                        >This field is required and cannot be empty</small>
+            
+                        <small 
+                        *ngIf="form.get('lastname')!.errors!['minlength']">
+                        This field must contain at least  {{form.get('lastname')!.errors!['minlength']!.requiredLength}} characters, now it contains {{form.get('lastname')!.errors!['minlength']!.actualLength}}...
+                        </small>
+        
+                        <small 
+                        *ngIf="form.get('lastname')!.errors!['maxlength']">
+                        This field must not exceed   {{form.get('lastname')!.errors!['maxlength']!.requiredLength}} characters, now it contains {{form.get('lastname')!.errors!['maxlength']!.actualLength}}...
+                        </small>
+                    </mat-error>
+            </mat-form-field>
+   
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput required formControlName="email">
+                    <mat-error
+                        *ngIf="form.get('email')!.invalid && form.get('email')!.touched"
+                        class="validation">
+                        <small *ngIf="form.get('email')!.errors!['required']"
+                        >This field is required and cannot be empty</small>
+        
+                        <small *ngIf="form.get('email')!.errors!['email']"
+                        >this email address is incorrect</small>
+    
+                        <small 
+                        *ngIf="form.get('email')!.errors!['maxlength']">
+                        This field must not exceed   {{form.get('email')!.errors!['maxlength']!.requiredLength}} characters, now it contains {{form.get('email')!.errors!['maxlength']!.actualLength}}...
+                        </small>
+                    </mat-error>
+            </mat-form-field>
+   
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Password</mat-label>
+                <input matInput required formControlName="password">
+                    <mat-error
+                        *ngIf="form.get('password')!.invalid && form.get('password')!.touched"
+                        class="validation">
+                        <small *ngIf="form.get('password')!.errors!['required']"
+                        >This field is required and cannot be empty</small>
+            
+                        <small *ngIf="form.get('password')!.errors!['minlength']"
+                        >This field must contain at least  {{form.get('password')!.errors!['minlength']!.requiredLength}} characters, now it contains {{form.get('password')!.errors!['minlength']!.actualLength}}...
+                        </small>
+    
+                        <small 
+                        *ngIf="form.get('password')!.errors!['maxlength']">
+                        This field must not exceed   {{form.get('password')!.errors!['maxlength']!.requiredLength}} characters, now it contains {{form.get('password')!.errors!['maxlength']!.actualLength}}...
+                        </small>
+    
+                        <small 
+                        *ngIf="form.get('password')?.errors?.pattern">
+                        Password must contain either lowercase letters, uppercase letters and digits
+                        </small>
+                    </mat-error>
+            </mat-form-field>
+   
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput required formControlName="confirm_password">
+                    <mat-error 
+                        *ngIf="form.get('confirm_password')!.invalid && form.get('confirm_password')!.touched"
+                        class="validation">
+                        <small *ngIf="form.get('confirm_password')!.errors!['required']"
+                        >This field is required and cannot be empty</small>
+            
+                        <small *ngIf="form.get('confirm_password')!.errors!['minlength']"
+                        >This field must contain at least  {{form.get('confirm_password')!.errors!['minlength']!.requiredLength}} characters, now it contains {{form.get('confirm_password')!.errors!['minlength']!.actualLength}}...
+                        </small>
+            
+                        <small 
+                        *ngIf="form.get('confirm_password')!.errors!['maxlength']">
+                        This field must not exceed   {{form.get('confirm_password')!.errors!['maxlength']!.requiredLength}} characters, now it contains {{form.get('confirm_password')!.errors!['maxlength']!.actualLength}}...
+                        </small>
+            
+                        <small *ngIf="form.get('confirm_password')!.errors!['MustMatch']"
+                        >Confirm password must match</small>
+                    </mat-error>
+            </mat-form-field>
+        </mat-card-content>
+
+        <div class="flex">
+        <mat-card-actions>
+            <button 
+            mat-raised-button 
+            color="primary"
+            class="btn"
+            [disabled]="form.invalid"
+            >Submit</button>
+        </mat-card-actions>
+        </div>
+    </form>
+    <p> 
+        Already have an account? 
+        <span   class="registration-block__item link" (click)="goToLogInPage()"> Log in</span>
+    </p>
+
+
+    </div>
+</div>
+
+<app-modal></app-modal>

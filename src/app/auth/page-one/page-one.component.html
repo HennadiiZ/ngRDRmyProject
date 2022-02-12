@@ -1,0 +1,63 @@
+
+<div class="wrap">
+    <h1>Welcome to our App!!! </h1>
+    <p>We are happy to see you here!!!</p>
+</div>
+
+
+
+
+<!-- <ng-template
+[appHasRole]="userRoles.Employee"
+[user]="user"
+>
+<h2> Employee</h2>
+<p>Employee cheer up!!!</p>
+</ng-template>
+
+
+<ng-template
+[appHasRole]="userRoles.Admin"
+[user]="user"
+>
+<h2> Admin </h2>
+<p>Admin , you are so Admin!!!</p>
+<div>Click <a  (click)="goToAdminPage()" >here</a> !</div>
+</ng-template> -->
+
+
+
+
+<ng-template
+[appHasRole]="userRoles.Employee"
+[user]="user"
+>
+<app-for-users ></app-for-users>
+</ng-template>
+
+<ng-template
+[appHasRole]="userRoles.Admin"
+[user]="user"
+>
+<app-for-admins ></app-for-admins>
+<div>Click <a  (click)="goToAdminPage()" >here</a> !</div>
+</ng-template>
+
+<!-- <app-for-admins *appHasRole="'userRoles.Employee'" ></app-for-admins> 
+<app-for-users *appHasRole="'userRoles.Admin'"></app-for-users> -->
+<!-- <app-for-admins *appHasRole="'user'" ></app-for-admins> 
+<app-for-users *appHasRole="'user'"></app-for-users> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+

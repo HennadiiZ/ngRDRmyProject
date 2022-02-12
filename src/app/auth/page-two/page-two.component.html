@@ -1,0 +1,15 @@
+<div class="wrap">
+    <h1></h1>
+    <p>Yes, take a look around ...</p>
+    <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+    
+    <input class="input-check" type="text" (keyup)="changeText()">
+
+    <button 
+    mat-raised-button  
+    color="primary"
+    class="btn btn-check"
+    (click)="changeArray()"
+    >Change Array</button>
+
+</div>

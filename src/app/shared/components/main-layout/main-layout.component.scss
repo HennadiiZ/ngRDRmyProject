@@ -1,0 +1,22 @@
+.main{
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.navbar{
+    justify-content: center;
+}

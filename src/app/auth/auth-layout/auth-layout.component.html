@@ -1,0 +1,21 @@
+
+ <mat-toolbar color="primary" class="navbar">
+     <div><a>AngularMatApp</a></div>
+     <div>
+        <ul *ngIf="authService.isAuthenticated()"  >
+            <li routerLinkActive="active">
+                <a [routerLink]="['/auth', 'page-one']">Page-one</a>
+            </li>
+            <li routerLinkActive="active">
+              <a [routerLink]="['/auth', 'page-two']">Page-two</a>
+            </li>
+            <li>
+                <a href="#" (click)="logout($event)">logout</a>
+            </li>
+          </ul>
+     </div>
+ </mat-toolbar>
+
+ <div class="container">
+  <router-outlet></router-outlet>
+</div>

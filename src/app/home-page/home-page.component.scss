@@ -1,0 +1,12 @@
+a{
+    cursor: pointer;
+    text-decoration: underline;
+    border: 1px solid transparent;
+    padding: 10px;
+    margin: 10px;
+}
+a:hover{
+    text-decoration: none;
+    border: 1px solid black;
+}
+

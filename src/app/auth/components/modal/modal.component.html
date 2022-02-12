@@ -1,0 +1,14 @@
+
+<ng-container *ngIf="display$ | async as display">
+    <section [class.open]="display === 'open'"
+            (click)="close()">
+        <div (click)="$event.stopPropagation()">
+            <button 
+            class="close"
+            type="button"
+            (click)="close()"
+            >&times;</button>
+            <p>Email has been sent to your email address. Please verify your email and then you can log into a system.</p>
+        </div>
+    </section>
+</ng-container>

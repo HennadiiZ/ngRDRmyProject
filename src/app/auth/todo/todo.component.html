@@ -1,0 +1,33 @@
+
+<div class="inBox"> 
+
+    <div class="cont">
+        <div>
+            {{ todoProps.text }}
+        </div>
+        
+        <div>
+            Check render: {{ checkRender() }}
+        </div>
+        
+        <div>
+            filter: {{ filter$ | async }}
+        </div>
+    </div>
+
+
+    <button
+    mat-raised-button  
+    color="primary"
+    class="btn btn-check"
+    (click)="changeText()"
+    >Change Text</button>
+    
+    <button
+    mat-raised-button  
+    color="primary"
+    class="btn btn-check"
+    (click)="changeFilter()"
+    >Change Filter</button>
+    
+</div>
